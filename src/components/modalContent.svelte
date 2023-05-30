@@ -1,21 +1,22 @@
 <script>
   import CardImage from "./cardImage.svelte";
   import Image from "../assets/picture.jpg";
+  export let title;
+  export let image;
+  export let imageAltText;
+  export let description;
+  export let link;
 
 </script>
-<header class="modal__title">Projects</header>
+<header class="modal__title">{title}</header>
 <div class="modal__body">
   <div class="modal__image">
 
-    <CardImage alt="niki" image={"Image"}/>
+    <CardImage alt={imageAltText} image={image}/>
   </div>
   <div class="modal__text">
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsum
-      consequatur excepturi, nemo hic consequuntur eum suscipit nulla eaque
-      dolorum architecto minima molestias ratione obcaecati tenetur voluptatem
-      fugit vitae! Ducimus.</span
-    >
+    <p>{description}</p>
+    <a href={link}>View project!</a>
   </div>
 </div>
 

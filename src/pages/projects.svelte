@@ -7,44 +7,38 @@
     import Image from "../assets/picture.jpg";
     import Modal from "../components/modal.svelte";
     import ModalContent from "../components/modalContent.svelte";
+    import Project from "../components/project.svelte";
     let showModal = false;
+
+    const projects = [
+        {
+            title: "SecondChance",
+            description: "this is a test",
+            image: "",
+            imageAltText: "SecondChance",
+            link: "",
+
+        },
+        {
+            title: "SecondChance",
+            description: "this is a test",
+            image: "",
+            imageAltText: "SecondChance",
+            link: "",
+
+        },
+        
+    ]
 </script>
+
+
 
 <div class="main-content">
     <h2>Projects</h2>
     <Grid>
-        <GridItem width="4">
-            <Card onClick={() => (showModal = true)}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
-        <GridItem width="4">
-            <Card onClick={() => console.log()}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
-        <GridItem width="4">
-            <Card onClick={() => console.log()}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
-        <GridItem width="4">
-            <Card onClick={() => console.log()}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
-        <GridItem width="4">
-            <Card onClick={() => console.log()}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
-        <GridItem width="4">
-            <Card onClick={() => console.log()}>
-                <CardImage alt="niki" image={Image} />
-            </Card>
-        </GridItem>
+        {#each projects as project}
+        <Project description={project.description} image={project.image} imageAltText={project.imageAltText} link={project.link} title={project.title} />
+        {/each}
     </Grid>
-    <Modal bind:visible={showModal} bind:showModal={showModal }>
-        <ModalContent />
-    </Modal>
+      
 </div> 
